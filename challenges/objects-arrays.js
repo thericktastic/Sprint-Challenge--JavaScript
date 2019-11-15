@@ -114,8 +114,7 @@ Log the result of your new array. */
 const contactInfo = [];
 
 function getContactInfo (listOfGraduates) {
-  listOfGraduates.forEach((arr) => contactInfo.push (`${arr.first_name} ${arr.email}`))
-
+  listOfGraduates.forEach((arr) => contactInfo.push (`${arr.first_name} ${arr.email}`));
   return contactInfo;
 }
 
@@ -129,12 +128,11 @@ function getUnisWithUni (listOfGraduates, withUni) {
   filtered = listOfGraduates.filter (function (graduate) {
     return graduate.university.includes(withUni);
   });
-  return filtered
+  return filtered;
 }
 
 function createNewArray (input) {
-  input.forEach((arr) => unisWithUni.push (`${arr.university}`))
-
+  input.forEach((arr) => unisWithUni.push (`${arr.university}`));
   return unisWithUni;
 }
 
@@ -204,19 +202,11 @@ The zoos are concerned about animals with a lower population count. Using filter
 */
 const lowPopulationAnimals = [];
 
-// function getRunnersByTShirtSize(runners, tShirtSize) {
-//   const filtered = runners.filter(function(runner) {
-//     return runner.shirt_size === tShirtSize;
-//   });
-
-//   return filtered;
-// }
-
 function getLowPopAnimals (listOfAnimals, maxPop) {
   filtered = listOfAnimals.filter (function (lowPopAnimal) {
     return lowPopAnimal.population < maxPop;
   });
-  return filtered
+  return filtered;
 }
 
 function createNewPopArray (input) {
@@ -232,9 +222,15 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
-console.log(populationTotal);
+let populationTotal = 0;
 
+function getTotalPop (listOfAnimals) {
+  populationTotal = listOfAnimals.reduce((acc, currVal) => acc + currVal.population, 0);
+  return populationTotal
+}
+
+getTotalPop(zooAnimals);
+console.log(populationTotal);
 
 /*
 
