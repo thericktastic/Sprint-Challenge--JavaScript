@@ -17,7 +17,7 @@ const tRex = {
   roar: function() {
     return "RAWERSRARARWERSARARARRRR!";
   }
-}
+};
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
 
@@ -27,7 +27,7 @@ const stego = {
   weight: '2000kg',
   length: '9m',
   period: 'Late Jurassic'
-}
+};
 
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
 
@@ -37,7 +37,7 @@ const velo = {
   weight: '15kg',
   length: '1.8m',
   period: 'Late Cretaceous'
-}
+};
 
 // Using your dinosaur objects, log answers to these questions:
 
@@ -81,7 +81,7 @@ Once you have the new array created, sort the universities alphabetically and lo
 const universities = [];
 
 function getUnis (listOfGraduates) {
-  listOfGraduates.forEach((listOfGraduates) => universities.push (`${listOfGraduates.university}`))
+  listOfGraduates.forEach((listOfGraduates) => universities.push (`${listOfGraduates.university}`));
   return universities;
 }
 
@@ -99,7 +99,7 @@ function sortUnis(listOfUnis) {
       return 0;
     }
   });
-}
+};
 
 getUnis(graduates);
 sortUnis(universities);
@@ -129,12 +129,12 @@ function getUnisWithUni (listOfGraduates, withUni) {
     return graduate.university.includes(withUni);
   });
   return filtered;
-}
+};
 
 function createNewArray (input) {
   input.forEach((arr) => unisWithUni.push (`${arr.university}`));
   return unisWithUni;
-}
+};
 
 createNewArray(getUnisWithUni(graduates, 'Uni'));
 console.log(unisWithUni);
@@ -165,9 +165,9 @@ The zoos want to display both the scientific name and the animal name in front o
 const displayNames = [];
 
 function getNames (listOfAnimals) {
-  listOfAnimals.forEach((arr) => displayNames.push (`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name}`))
+  listOfAnimals.forEach((arr) => displayNames.push (`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name}.`));
   return displayNames;
-}
+};
 
 getNames(zooAnimals);
 console.log(displayNames);
@@ -181,16 +181,14 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 const lowCaseAnimalNames = [];
 
 function convertToLowerCase (listOfAnimals) {
-  lowCaseAnimalNames = listOfAnimals.map(function (listOfAnimals) {
-    return listOfAnimals.animal_name.toLowerCase();
-  });
-  return lowCaseAnimalNames
-}
+  lowCaseAnimals = listOfAnimals.map ((listOfAnimals) => listOfAnimals.animal_name.toLowerCase());
+  return lowCaseAnimals;
+};
 
 function createNewAnimArray (input) {
   input.forEach((arr) => lowCaseAnimalNames.push (arr));
   return lowCaseAnimalNames;
-}
+};
 
 createNewAnimArray(convertToLowerCase(zooAnimals));
 console.log(lowCaseAnimalNames);
@@ -203,16 +201,14 @@ The zoos are concerned about animals with a lower population count. Using filter
 const lowPopulationAnimals = [];
 
 function getLowPopAnimals (listOfAnimals, maxPop) {
-  filtered = listOfAnimals.filter (function (lowPopAnimal) {
-    return lowPopAnimal.population < maxPop;
-  });
-  return filtered;
-}
+  filtered = listOfAnimals.filter ((lowPopAnimal) => lowPopAnimal.population < maxPop);
+  return filtered
+};
 
 function createNewPopArray (input) {
   input.forEach((arr) => lowPopulationAnimals.push (arr));
   return lowPopulationAnimals;
-}
+};
 
 createNewPopArray(getLowPopAnimals(zooAnimals, 5));
 console.log(lowPopulationAnimals);
@@ -226,7 +222,7 @@ let populationTotal = 0;
 
 function getTotalPop (listOfAnimals) {
   populationTotal = listOfAnimals.reduce((acc, currVal) => acc + currVal.population, 0);
-  return populationTotal
+  return populationTotal;
 }
 
 getTotalPop(zooAnimals);
